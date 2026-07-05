@@ -154,22 +154,65 @@
   var lbCount = doc.getElementById("lb-count");
   var idx = 0;
   var lastFocus = null;
+  var lbToken = 0; // guards against races when navigating quickly
+
+  // Warm the browser cache for a frame so opening/advancing is instant.
+  function preload(i) {
+    var d = photoDevs[i];
+    if (!d) return;
+    var src = d.getAttribute("data-full");
+    if (!src) return;
+    var img = new Image();
+    img.decoding = "async";
+    img.src = src;
+  }
 
   function renderLb() {
     var d = photoDevs[idx];
     if (!d) return;
+
+    var name = d.getAttribute("data-name") || "";
+    var year = d.getAttribute("data-year") || "";
+    var src = d.getAttribute("data-full");
+    var token = ++lbToken;
+
+    // Caption/count update immediately so navigation feels responsive.
+    lbName.textContent = name;
+    lbYear.textContent = year;
+    lbDot.style.display = name && year ? "" : "none";
+    lbCount.textContent = idx + 1 + " / " + photoDevs.length;
+
+    // Fade the current frame out.
     lb.setAttribute("data-swap", "1");
-    setTimeout(function () {
-      var name = d.getAttribute("data-name") || "";
-      var year = d.getAttribute("data-year") || "";
-      lbImg.src = d.getAttribute("data-full");
+
+    var reveal = function () {
+      if (token !== lbToken) return; // a newer navigation superseded this one
+      lbImg.src = src;
       lbImg.alt = name;
-      lbName.textContent = name;
-      lbYear.textContent = year;
-      lbDot.style.display = name && year ? "" : "none";
-      lbCount.textContent = idx + 1 + " / " + photoDevs.length;
-      lb.removeAttribute("data-swap");
-    }, 180);
+      // Apply the new src while hidden, then fade in on the next frame so the
+      // image is decoded before it becomes visible (prevents the blink).
+      requestAnimationFrame(function () {
+        if (token !== lbToken) return;
+        lb.removeAttribute("data-swap");
+      });
+    };
+
+    // Wait for the new image to be ready before revealing it.
+    var pre = new Image();
+    pre.decoding = "async";
+    var onReady = function () {
+      if (token !== lbToken) return;
+      if (pre.decode) { pre.decode().then(reveal).catch(reveal); }
+      else reveal();
+    };
+    pre.onload = onReady;
+    pre.onerror = onReady;
+    pre.src = src;
+    if (pre.complete) onReady();
+
+    // Prefetch neighbours so subsequent moves are seamless.
+    preload((idx + 1) % photoDevs.length);
+    preload((idx - 1 + photoDevs.length) % photoDevs.length);
   }
   function openLb(i) {
     lastFocus = doc.activeElement;
@@ -182,7 +225,9 @@
     if (close) close.focus();
   }
   function closeLb() {
+    lbToken++; // cancel any in-flight swap
     lb.removeAttribute("data-open");
+    lb.removeAttribute("data-swap");
     lb.setAttribute("aria-hidden", "true");
     doc.body.style.overflow = "";
     if (lastFocus && lastFocus.focus) lastFocus.focus();
@@ -298,6 +343,29 @@
         setStatus("Opening WhatsApp…", "success");
       });
     }
+  }
+
+  /* ---------- mobile menu ---------- */
+  var navToggles = [].slice.call(doc.querySelectorAll(".nav-toggle"));
+  var mobileMenu = doc.getElementById("mobile-menu");
+  if (mobileMenu && navToggles.length) {
+    var menuClose = doc.getElementById("mobile-menu-close");
+    var setMenu = function (open) {
+      mobileMenu.classList.toggle("open", open);
+      mobileMenu.setAttribute("aria-hidden", open ? "false" : "true");
+      navToggles.forEach(function (t) { t.setAttribute("aria-expanded", open ? "true" : "false"); });
+      doc.body.style.overflow = open ? "hidden" : "";
+    };
+    navToggles.forEach(function (t) {
+      t.addEventListener("click", function () { setMenu(!mobileMenu.classList.contains("open")); });
+    });
+    if (menuClose) menuClose.addEventListener("click", function () { setMenu(false); });
+    [].slice.call(mobileMenu.querySelectorAll("a")).forEach(function (a) {
+      a.addEventListener("click", function () { setMenu(false); });
+    });
+    doc.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mobileMenu.classList.contains("open")) setMenu(false);
+    });
   }
 
   /* ---------- sticky top bar ---------- */

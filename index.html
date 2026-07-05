@@ -80,9 +80,23 @@
       <a href="#about" class="navlink">About</a>
       <a href="#contact" class="navlink">Contact</a>
       <a href="#enquiry" class="btn btn-pill btn-accent">Enquire</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </div>
 </header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="mobile-menu__close" id="mobile-menu-close" type="button" aria-label="Close menu">✕</button>
+  <nav class="mobile-menu__nav" aria-label="Mobile">
+    <a href="#works">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#enquiry" class="btn btn-pill btn-accent">Enquire</a>
+  </nav>
+</div>
 
 <div class="scrollwrap">
 
@@ -95,6 +109,9 @@
         <a href="#about" class="navlink">About</a>
         <a href="#contact" class="navlink">Contact</a>
         <a href="#enquiry" class="btn btn-pill btn-accent">Enquire</a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
 
@@ -140,8 +157,8 @@
   <!-- ============ EVENTS / COLLECTIONS ============ -->
   <section id="events" class="section section--events padx">
     <div class="reveal head head--center wrap" data-reveal>
-      <h2 class="head__title">Collections</h2>
       <p class="eyebrow">Events, in full</p>
+      <h2 class="head__title">Collections</h2>
     </div>
     <div id="events-root"><!-- rendered from js/data.js --></div>
   </section>

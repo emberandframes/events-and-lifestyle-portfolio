@@ -50,6 +50,7 @@
         '<video class="img" preload="metadata" muted playsinline' + (poster ? ' poster="' + poster + '"' : "") + ' src="' + v.src + '"></video>' +
         '<div class="cast"></div><div class="bath"></div><div class="sheen"></div>' +
         '<svg class="wmark" aria-hidden="true"><use href="#ef-mark"></use></svg>' +
+        '<div class="vwmark" aria-hidden="true">Ember <span class="amp">&amp;</span> Frames</div>' +
         '<div class="playbtn"><div class="tri"></div></div>' +
       "</div>";
     if (opts.framed) {
@@ -127,7 +128,7 @@
           revealIO.unobserve(en.target);
         }
       });
-    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0 });
     reveals.forEach(function (el) { revealIO.observe(el); });
 
     // Re-runs the develop → colour transition every time a frame enters the
@@ -279,6 +280,23 @@
       if (p && p.catch) { p.catch(function () { v.muted = true; v.play(); }); }
     });
   });
+
+  /* Keep the brand watermark visible when a video is played fullscreen. Native
+     fullscreen on a bare <video> hides sibling overlays, so redirect fullscreen
+     to the wrapper (which contains the watermark). Degrades gracefully: if the
+     browser blocks the re-request, native fullscreen still works. */
+  function redirectVideoFullscreen() {
+    var fsEl = doc.fullscreenElement || doc.webkitFullscreenElement;
+    if (fsEl && fsEl.tagName === "VIDEO" && fsEl.closest) {
+      var wrap = fsEl.closest(".dev.vid");
+      if (wrap && wrap !== fsEl) {
+        var req = wrap.requestFullscreen || wrap.webkitRequestFullscreen;
+        if (req) { try { req.call(wrap); } catch (e) {} }
+      }
+    }
+  }
+  doc.addEventListener("fullscreenchange", redirectVideoFullscreen);
+  doc.addEventListener("webkitfullscreenchange", redirectVideoFullscreen);
 
   /* ---------- enquiry form ---------- */
   var form = doc.getElementById("enquiry-form");

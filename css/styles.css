@@ -124,7 +124,7 @@ section[id]{scroll-margin-top:86px;}
   padding:14px 56px;
 }
 .topbar__brand{
-  font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.01em;line-height:1;
+  font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.01em;line-height:1;
   color:var(--cream);text-decoration:none;white-space:nowrap;
 }
 .topbar__nav{display:flex;align-items:center;gap:26px;}
@@ -231,8 +231,8 @@ section[id]{scroll-margin-top:86px;}
 
 /* ---------- 7. Section headings + type ---------- */
 .section{position:relative;}
-.section--works{padding:96px 56px 40px;background:var(--paper);}
-.section--events{padding:40px 56px 80px;background:#efeadf;}
+.section--works{padding:96px 56px 56px;background:var(--paper);}
+.section--events{padding:80px 56px 88px;background:#e7ddca;border-top:1px solid rgba(143,82,48,.18);}
 .section--about{padding:80px 56px;background:#ede7da;}
 .section--contact{padding:80px 56px 60px;background:#ece5d6;text-align:center;}
 .section--enquiry{padding:64px 56px 88px;background:#eae2d2;}
@@ -279,10 +279,27 @@ section[id]{scroll-margin-top:86px;}
 /* watermark — Ember & Frames brand mark (inline SVG so the ampersand uses Cormorant Garamond) */
 .ef-sprite{position:absolute;width:0;height:0;overflow:hidden;}
 .wall .dev .wmark,.event-grid .dev .wmark,.hero__print .dev .wmark,.about .dev .wmark{
+  display:none; /* watermark burned into image file — overlay disabled to avoid doubling */
   position:absolute;right:6px;bottom:6px;z-index:6;pointer-events:none;
   width:46px;height:46px;opacity:.85;
   filter:drop-shadow(0 0 2px rgba(245,239,230,.95)) drop-shadow(0 1px 2px rgba(0,0,0,.28));
 }
+
+/* video watermark — overlay text mark (videos can't carry a burned-in mark) */
+.event-grid .dev.vid .vwmark{
+  position:absolute;left:12px;top:11px;z-index:7;pointer-events:none;
+  font-family:var(--serif);font-size:15px;font-weight:600;line-height:1;letter-spacing:.01em;
+  color:rgba(244,238,226,.9);text-shadow:0 1px 4px rgba(0,0,0,.6);
+}
+.event-grid .dev.vid .vwmark .amp{color:var(--accent);font-style:italic;}
+/* when the tile is taken fullscreen, the wrapper (not the bare <video>) fills the
+   screen so the watermark stays visible; scale it up for the larger canvas */
+.dev.vid:fullscreen{display:flex;align-items:center;justify-content:center;background:#000;}
+.dev.vid:fullscreen video{width:100%;height:100%;object-fit:contain;}
+.dev.vid:fullscreen .vwmark{font-size:clamp(18px,2.4vw,30px);left:22px;top:20px;}
+.dev.vid:-webkit-full-screen{display:flex;align-items:center;justify-content:center;background:#000;}
+.dev.vid:-webkit-full-screen video{width:100%;height:100%;object-fit:contain;}
+.dev.vid:-webkit-full-screen .vwmark{font-size:clamp(18px,2.4vw,30px);left:22px;top:20px;}
 
 /* click affordance */
 .wall .dev,.event-grid .dev{cursor:zoom-in;}
@@ -397,7 +414,7 @@ section[id]{scroll-margin-top:86px;}
 /* ---------- 14. Footer ---------- */
 .footer{background:var(--dark);padding:24px 56px;display:flex;justify-content:space-between;align-items:center;gap:14px;}
 .footer span,.footer a{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,233,221,.64);font-weight:400;}
-.footer .footer__brand{font-family:var(--serif);font-size:19px;letter-spacing:.5px;text-transform:none;color:rgba(239,233,221,.78);}
+.footer .footer__brand{font-family:var(--serif);font-size:18px;letter-spacing:.5px;text-transform:none;color:rgba(239,233,221,.78);}
 .footer__brand .amp{font-family:var(--serif);font-style:italic;font-size:inherit;text-transform:none;letter-spacing:0;color:var(--accent);}
 .footer__left{display:inline-flex;align-items:baseline;gap:12px;}
 .footer a{text-decoration:none;transition:color .2s;}
@@ -446,6 +463,7 @@ section[id]{scroll-margin-top:86px;}
 .lb[data-open="1"] .lb-img{transform:scale(1);opacity:1;}
 .lb[data-swap="1"] .lb-img{opacity:0;}
 .lb-wmark{
+  display:none; /* burned into the image file — overlay disabled */
   position:absolute;right:14px;bottom:14px;width:58px;height:58px;z-index:2;pointer-events:none;
   opacity:0;transition:opacity .4s ease .15s;
   filter:drop-shadow(0 0 2px rgba(245,239,230,.9)) drop-shadow(0 1px 3px rgba(0,0,0,.4));
@@ -482,8 +500,9 @@ section[id]{scroll-margin-top:86px;}
 @media (max-width:760px){
   .padx{padding-left:20px;padding-right:20px;}
   .topbar__inner{padding:12px 20px;}
-  .topbar__nav{gap:14px;}
+  .topbar__nav{gap:8px;}
   .topbar__nav a:not(.btn){display:none;}
+  .hero__links{gap:8px;}
   .hero__links a:not(.btn){display:none;}
   .nav-toggle{display:flex;}
   .hero__body{grid-template-columns:1fr;gap:32px;padding-top:8px;padding-bottom:48px;}

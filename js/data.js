@@ -7,7 +7,7 @@
    ===================================================================== */
 window.EMBER_DATA = {
   contact: {
-    email: "emberandframes@gmail.com",
+    email: "hello@emberandframes.com",
     phoneDisplay: "+91 84474 02780",
     phoneTel: "+918447402780",
     whatsapp: "918447402780",

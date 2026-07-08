@@ -1,0 +1,6 @@
+# Ember & Frames — Events & Lifestyle Portfolio — security contact (RFC 9116)
+# https://www.rfc-editor.org/rfc/rfc9116
+Contact: mailto:hello@emberandframes.com
+Expires: 2027-07-08T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://emberandframes.github.io/events-portfolio/.well-known/security.txt

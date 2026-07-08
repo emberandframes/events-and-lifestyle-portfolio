@@ -48,7 +48,7 @@ Then visit `http://localhost:8000/`.
 
 The enquiry form does not POST to a server. On submit it builds a pre-filled message and hands off to the visitor's own app:
 
-- **Send via email** opens the mail client with the enquiry pre-filled to `emberandframes@gmail.com`.
+- **Send via email** opens the mail client with the enquiry pre-filled to `hello@emberandframes.com`.
 - **Send via WhatsApp** opens `wa.me/918447402780` with the same enquiry as text.
 
 Direct contact details are also listed on the page for visitors with JavaScript disabled.

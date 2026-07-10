@@ -15,16 +15,18 @@ window.EMBER_DATA = {
   },
 
   /* The wall — 8 curated frames, alternating subjects so no two
-     similar images sit next to each other. */
+     similar images sit next to each other. Each `ratio` matches the
+     image's true pixel aspect ratio so the frame never crops the photo —
+     which keeps the burned-in watermark uncropped and a consistent size. */
   wall: [
-    { src: "Photos/Arthi%20Sonthalia/DSC02835.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-    { src: "Photos/Festival%20of%20Play/DSC00744.JPG", name: "Festival of Play", year: "", ratio: "1/1" },
-    { src: "Photos/Arthi%20Sonthalia/DSC02801.jpg", name: "Arti Sonthalia", year: "", ratio: "3/4" },
-    { src: "Photos/Festival%20of%20Play/DSC00510.JPG", name: "Festival of Play", year: "", ratio: "5/4" },
-    { src: "Photos/Arthi%20Sonthalia/DSC02817.jpg", name: "Arti Sonthalia", year: "", ratio: "1/1" },
-    { src: "Photos/Festival%20of%20Play/DSC00922.JPG", name: "Festival of Play", year: "", ratio: "4/5" },
-    { src: "Photos/Arthi%20Sonthalia/DSC02788.jpg", name: "Arti Sonthalia", year: "", ratio: "3/4" },
-    { src: "Photos/Festival%20of%20Play/DSC00342.JPG", name: "Festival of Play", year: "", ratio: "1/1" }
+    { src: "Photos/Arthi%20Sonthalia/DSC02835.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+    { src: "Photos/Festival%20of%20Play/DSC00744.JPG", name: "Festival of Play", year: "", ratio: "2/3" },
+    { src: "Photos/Arthi%20Sonthalia/DSC02801.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+    { src: "Photos/Festival%20of%20Play/DSC00510.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
+    { src: "Photos/Arthi%20Sonthalia/DSC02817.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+    { src: "Photos/Festival%20of%20Play/DSC00922.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
+    { src: "Photos/Arthi%20Sonthalia/DSC02788.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+    { src: "Photos/Festival%20of%20Play/DSC00342.JPG", name: "Festival of Play", year: "", ratio: "3/2" }
   ],
 
   /* Event collections — rendered in order. */
@@ -36,21 +38,21 @@ window.EMBER_DATA = {
       count: "",
       items: [
         { type: "video", src: "Videos/Arthi%20Sonthalia/Discoveri%20Oaks%201.mp4", label: "Discoveri Oaks, Hyderabad", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02765.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02772.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02781.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02770.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02785.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02795.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02804.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02765.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02772.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02781.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02770.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02785.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02795.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02804.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
         { type: "video", src: "Videos/Arthi%20Sonthalia/Discoveri%20Oaks%202.mp4", label: "Discoveri Oaks, Hyderabad", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02797.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02820.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02806.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02831.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02810.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02823.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02776.jpg", name: "Arti Sonthalia", year: "", ratio: "4/5" }
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02797.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02820.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02806.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02831.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02810.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02823.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02776.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" }
       ]
     },
     {
@@ -59,14 +61,14 @@ window.EMBER_DATA = {
       title: "Festival of Play",
       count: "",
       items: [
-        { type: "photo", src: "Photos/Festival%20of%20Play/DSC00228.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
+        { type: "photo", src: "Photos/Festival%20of%20Play/DSC00228.JPG", name: "Festival of Play", year: "", ratio: "2/3" },
         { type: "photo", src: "Photos/Festival%20of%20Play/DSC00733.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
         { type: "photo", src: "Photos/Festival%20of%20Play/DSC00332.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
         { type: "photo", src: "Photos/Festival%20of%20Play/DSC00922.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
         { type: "photo", src: "Photos/Festival%20of%20Play/DSC00342.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
         { type: "photo", src: "Photos/Festival%20of%20Play/DSC01166.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
         { type: "photo", src: "Photos/Festival%20of%20Play/DSC00510.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
-        { type: "photo", src: "Photos/Festival%20of%20Play/DSC00744.JPG", name: "Festival of Play", year: "", ratio: "3/2" }
+        { type: "photo", src: "Photos/Festival%20of%20Play/DSC00744.JPG", name: "Festival of Play", year: "", ratio: "2/3" }
       ]
     },
     {

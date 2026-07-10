@@ -1,6 +1,6 @@
 # Ember &amp; Frames — Events &amp; Lifestyle Photography Portfolio
 
-A static, single-page portfolio for **Ember &amp; Frames**, an events, celebrations, and lifestyle photography and content studio based in Hyderabad, India. No build step, no dependencies — just vanilla HTML, CSS, and JavaScript served as static files.
+A static, single-page portfolio for **Ember &amp; Frames**, an events, gatherings, and lifestyle photography and content studio based in Hyderabad, India. No build step, no dependencies — just vanilla HTML, CSS, and JavaScript served as static files.
 
 - **Featured work:** Arthi Sonthalia, Festival of Play, You Can Sit With Us
 - **Stack:** plain HTML, CSS, and JavaScript

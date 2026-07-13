@@ -336,7 +336,7 @@
       if (err) { setStatus(err, "error"); return; }
       var subject = "Enquiry — " + d.occasion + " (" + d.name + ")";
       window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(buildText(d));
-      setStatus("Opening your email app…", "success");
+      setStatus("Opening your email. Please send the pre-filled message to complete your enquiry. We’ll reply within two working days.", "success");
     });
     var waBtn = doc.getElementById("ef-wa");
     if (waBtn) {
@@ -345,7 +345,7 @@
         if (err) { setStatus(err, "error"); return; }
         var text = "Hi Ember & Frames,\n\n" + buildText(d);
         window.open("https://wa.me/" + wa + "?text=" + encodeURIComponent(text), "_blank", "noopener");
-        setStatus("Opening WhatsApp…", "success");
+        setStatus("Opening WhatsApp. Please send the pre-filled message to complete your enquiry. We’ll reply within two working days.", "success");
       });
     }
   }

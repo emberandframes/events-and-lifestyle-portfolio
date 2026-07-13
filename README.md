@@ -1,6 +1,6 @@
 # Ember &amp; Frames — Events &amp; Lifestyle Photography Portfolio
 
-A static, single-page portfolio for **Ember &amp; Frames**, an events, gatherings, and lifestyle photography and content studio based in Hyderabad, India. No build step, no dependencies — just vanilla HTML, CSS, and JavaScript served as static files.
+A static, single-page portfolio for **Ember &amp; Frames**, a content studio for events, gatherings, and lifestyle, based in Hyderabad, India. No build step, no dependencies — just vanilla HTML, CSS, and JavaScript served as static files.
 
 - **Featured work:** Arthi Sonthalia, Festival of Play, You Can Sit With Us
 - **Stack:** plain HTML, CSS, and JavaScript
@@ -72,6 +72,8 @@ Rendering, the lightbox, the darkroom "develop" reveal, click-to-play video, the
 ## Branding
 
 The favicon ([favicon.svg](favicon.svg)) is the Ember &amp; Frames viewfinder mark — an amber camera frame with charcoal corner brackets on a parchment tile — shared across all three studio portfolios. The legacy `favicon.png` monogram is kept for reference. The wordmark renders "Ember &amp; Frames" as charcoal serif words with an amber italic ampersand, matching the studio logo.
+
+A faint trail of ember sparks drifts up behind the header type — glowing, spark-shaped flecks (`.tb-sparks i` in [css/styles.css](css/styles.css)), driven purely by CSS and switched off under `prefers-reduced-motion`.
 
 ## Deployment
 

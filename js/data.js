@@ -19,40 +19,41 @@ window.EMBER_DATA = {
      image's true pixel aspect ratio so the frame never crops the photo —
      which keeps the burned-in watermark uncropped and a consistent size. */
   wall: [
-    { src: "Photos/Arthi%20Sonthalia/DSC02835.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+    { src: "Photos/Arti%20Sonthalia/DSC02835.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
     { src: "Photos/Festival%20of%20Play/DSC00744.JPG", name: "Festival of Play", year: "", ratio: "2/3" },
-    { src: "Photos/Arthi%20Sonthalia/DSC02801.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+    { src: "Photos/Arti%20Sonthalia/DSC02801.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
     { src: "Photos/Festival%20of%20Play/DSC00510.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
-    { src: "Photos/Arthi%20Sonthalia/DSC02817.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+    { src: "Photos/Arti%20Sonthalia/DSC02817.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
     { src: "Photos/Festival%20of%20Play/DSC00922.JPG", name: "Festival of Play", year: "", ratio: "3/2" },
-    { src: "Photos/Arthi%20Sonthalia/DSC02788.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+    { src: "Photos/Arti%20Sonthalia/DSC02788.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
     { src: "Photos/Festival%20of%20Play/DSC00342.JPG", name: "Festival of Play", year: "", ratio: "3/2" }
   ],
 
   /* Event collections — rendered in order. */
   events: [
     {
-      id: "arthi-sonthalia",
+      id: "arti-sonthalia",
       eyebrow: "",
       title: "Arti Sonthalia",
       count: "",
       items: [
-        { type: "video", src: "Videos/Arthi%20Sonthalia/Discoveri%20Oaks%201.mp4", label: "Discoveri Oaks, Hyderabad", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02765.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02772.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02781.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02770.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02785.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02795.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02804.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "video", src: "Videos/Arthi%20Sonthalia/Discoveri%20Oaks%202.mp4", label: "Discoveri Oaks, Hyderabad", ratio: "4/5" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02797.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02820.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02806.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02831.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02810.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02823.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
-        { type: "photo", src: "Photos/Arthi%20Sonthalia/DSC02776.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" }
+        { type: "video", src: "Videos/Arti%20Sonthalia/Arti%20Reel%201%20final.mp4", label: "Reel", ratio: "9/16" },
+        { type: "video", src: "Videos/Arti%20Sonthalia/Discoveri%20Oaks%201.mp4", label: "Discoveri Oaks, Hyderabad", ratio: "4/5" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02765.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02772.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02781.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02770.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02785.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02795.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02804.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "video", src: "Videos/Arti%20Sonthalia/Discoveri%20Oaks%202.mp4", label: "Discoveri Oaks, Hyderabad", ratio: "4/5" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02797.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02820.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02806.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02831.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02810.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02823.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" },
+        { type: "photo", src: "Photos/Arti%20Sonthalia/DSC02776.jpg", name: "Arti Sonthalia", year: "", ratio: "2/3" }
       ]
     },
     {

@@ -280,6 +280,16 @@
     });
   });
 
+  /* Only one video at a time: when any clip starts, pause every other one so
+     two videos never play together (notably on mobile). */
+  [].slice.call(doc.querySelectorAll("[data-video] video")).forEach(function (vid) {
+    vid.addEventListener("play", function () {
+      [].slice.call(doc.querySelectorAll("[data-video] video")).forEach(function (other) {
+        if (other !== vid) { other.pause(); }
+      });
+    });
+  });
+
   /* Videos play fullscreen natively. Vertical clips are letterboxed via CSS
      (object-fit:contain) so they never zoom/crop to fill a landscape screen.
      The bottom-right brand watermark is burned into each clip, so there is no

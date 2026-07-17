@@ -2,7 +2,7 @@
 
 A static, single-page portfolio for **Ember &amp; Frames**, a content studio for events, gatherings, and lifestyle, based in Hyderabad, India. No build step, no dependencies — just vanilla HTML, CSS, and JavaScript served as static files.
 
-- **Featured work:** Arthi Sonthalia, Festival of Play, You Can Sit With Us
+- **Featured work:** Arti Sonthalia, Festival of Play, You Can Sit With Us
 - **Stack:** plain HTML, CSS, and JavaScript
 - **Hosting:** GitHub Pages (served from the repository root)
 
@@ -25,10 +25,10 @@ Live site: <https://emberandframes.github.io/events-portfolio/>
 │   ├── data.js       # Content layer — window.EMBER_DATA (contact, wall, events)
 │   └── main.js       # Application logic — rendering, lightbox, reveal effects, form
 ├── Photos/           # Curated images, one folder per shoot
-│   ├── Arthi Sonthalia/
+│   ├── Arti Sonthalia/
 │   └── Festival of Play/
 └── Videos/           # Films, one folder per shoot
-    ├── Arthi Sonthalia/
+    ├── Arti Sonthalia/
     └── You Can Sit With Us/
 ```
 
@@ -66,7 +66,7 @@ Rendering, the lightbox, the darkroom "develop" reveal, click-to-play video, the
 ## Editing conventions
 
 - Image and video paths are relative and **case-sensitive** on GitHub Pages. Preserve the `Photos/` and `Videos/` folder names and casing exactly.
-- `src` values in `data.js` are URL-encoded (for example `Photos/Arthi%20Sonthalia/DSC02835.jpg`) and resolve as-is.
+- `src` values in `data.js` are URL-encoded (for example `Photos/Arti%20Sonthalia/DSC02835.jpg`) and resolve as-is.
 - Open Graph and Twitter preview images use absolute `https://` URLs so WhatsApp, iMessage, Slack, and LinkedIn render link previews reliably.
 
 ## Branding

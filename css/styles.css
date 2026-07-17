@@ -317,11 +317,11 @@ section[id]{scroll-margin-top:86px;}
   width:clamp(30px,6vw,46px);height:clamp(30px,6vw,46px);opacity:.85;
   filter:drop-shadow(0 0 2px rgba(245,239,230,.95)) drop-shadow(0 1px 2px rgba(0,0,0,.28));
 }
-/* Images are clean — draw the fixed-size brand mark so the watermark is one
-   consistent size across every aspect ratio. Video tiles keep their own
-   burned-in mark and get no overlay (prevents a doubled mark on playback). */
+/* Every image already carries a burned-in bottom-right brand mark, so the
+   overlay mark is disabled to prevent a doubled watermark. Video tiles also
+   keep their burned-in mark and get no overlay. */
 .wall .dev:not(.vid) .wmark,.event-grid .dev:not(.vid) .wmark,.hero__print .dev:not(.vid) .wmark,.about .dev:not(.vid) .wmark{
-  display:block;
+  display:none;
 }
 
 /* Videos carry a burned-in bottom-right brand watermark, so no overlay mark is
